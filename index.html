@@ -331,12 +331,25 @@
 
     .venue-link:hover {
       color: var(--brown);
-      transform: translateY(-2px);
+      transform: translateY(-2px)
     }
+    .get-directions {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: #3d281f !important;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: .3s ease;
+}
 
-    .venue-link:hover span {
-      text-decoration: underline;
-    }
+.venue-link:hover .get-directions {
+  background: var(--brown);
+  color: white !important;
+  text-decoration: none;
+}
 
     .naming {
       background:
@@ -701,7 +714,7 @@
           <div class="detail-icon">⌖</div>
           <h3>Venue</h3>
           <p><a 
-  href="https://maps.app.goo.gl/7two2UQyUuPgfrQMA"
+   href="https://maps.app.goo.gl/7two2UQyUuPgfrQMA"
   target="_blank" 
   rel="noopener noreferrer" 
   class="venue-link"
@@ -711,8 +724,7 @@
   Near Kingdom Hall of Jehovah's Witnesses,<br>
   La, Accra, Ghana<br>
 
-  Get Direction
-
+  <span>📍 Get Direction </span>
 </a>
           </p>
         </div>
