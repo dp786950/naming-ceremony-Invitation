@@ -320,6 +320,33 @@
       line-height: 1.7;
       color: #6e5a51;
     }
+.get-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: var(--gold);
+  color: #3d281f;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.get-directions:hover {
+  background: var(--brown);
+  color: white;
+  transform: translateY(-3px);
+}
+
+    .venue-link {
+      display: inline-block;
+      color: inherit;
+      transition: color .25s ease, transform .25s ease;
+    }
+
     .venue-link span {
       display: inline-block;
       margin-top: 8px;
@@ -331,28 +358,13 @@
 
     .venue-link:hover {
       color: var(--brown);
-      transform: translateY(-2px)
+      transform: translateY(-2px);
     }
-    .get-directions {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 12px 20px;
-  background: var(--gold);
-  color: #3d281f !important;
-  border-radius: 50px;
-  font-weight: 700;
-  text-decoration: none !important;
-  transition: .3s ease;
-}
 
-.venue-link:hover .get-directions {
-  background: var(--brown);
-  color: white !important;
-  text-decoration: none;
-}
- .venue-link:hover span {
+    .venue-link:hover span {
       text-decoration: underline;
     }
+
     .naming {
       background:
         radial-gradient(circle at 0 100%, rgba(120,80,165,.22), transparent 35%),
@@ -712,21 +724,26 @@
           </p>
         </div>
 
-      <div class="detail-card">
-          <div class="detail-icon">⌖</div>
-          <h3>Venue</h3>
-          <p><a 
-   href="https://maps.app.goo.gl/7two2UQyUuPgfrQMA"
-  target="_blank" 
-  rel="noopener noreferrer" 
-  class="venue-link"
-  aria-label="Open Trinity Methodist Church, La, Ghana in Google Maps"
->
-  <strong>Trinity Methodist Church, La</strong><br>
-  Near Kingdom Hall of Jehovah's Witnesses,<br>
-  La, Accra, Ghana<br>
+         <div class="detail-card">
+         <div class="detail-icon">⌖</div>
+         <h3>Venue</h3>
 
-  <span>📍 Get Direction </span>
+  <p>
+    <strong>Trinity Methodist Church, La</strong><br>
+    Near Kingdom Hall of Jehovah's Witnesses,<br>
+    La, Accra, Ghana<br>
+
+    <a 
+      href="https://maps.app.goo.gl/7two2UQyUuPgfrQMA"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="get-directions"
+      aria-label="Get directions to Trinity Methodist Church, La, Ghana"
+    >
+      📍 Get Directions
+    </a>
+  </p>
+</div>
 </a>
           </p>
         </div>
