@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr. Evans Elikem Afeletey &amp; Miss Esther Naa Adjeley Tetteh | Naming Ceremony</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brown: #6b4438;
+      --brown-dark: #40251f;
+      --gold: #c39a55;
+      --cream: #fffaf4;
+      --white: #ffffff;
+      --green: #536b50;
+      --purple: #7650a5;
+      --purple-dark: #4b2d73;
+      --shadow: 0 20px 60px rgba(55, 30, 20, .16);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--cream);
+      color: var(--brown-dark);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .music-button {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      z-index: 1000;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 50%;
+      background: rgba(64,37,31,.75);
+      color: white;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,.18);
+      transition: .3s ease;
+    }
+
+    .music-button:hover {
+      transform: scale(1.08);
+      background: var(--brown);
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.75), transparent 28%),
+        linear-gradient(135deg, #e7d4c4, #f9f0e7 45%, #d9c6b4);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: .35;
+    }
+
+    .hero::before {
+      width: 380px;
+      height: 380px;
+      background: #d5b89d;
+      left: -140px;
+      top: -80px;
+    }
+
+    .hero::after {
+      width: 430px;
+      height: 430px;
+      background: #e9cda8;
+      right: -160px;
+      bottom: -120px;
+    }
+
+    .particles span {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255,255,255,.8);
+      border-radius: 50%;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .particles span:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .particles span:nth-child(2) { left: 25%; top: 70%; animation-delay: 1s; }
+    .particles span:nth-child(3) { left: 42%; top: 15%; animation-delay: 2s; }
+    .particles span:nth-child(4) { left: 65%; top: 30%; animation-delay: 3s; }
+    .particles span:nth-child(5) { left: 80%; top: 72%; animation-delay: 4s; }
+    .particles span:nth-child(6) { left: 90%; top: 18%; animation-delay: 5s; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); opacity: .2; }
+      50% { transform: translateY(-35px); opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(92%, 720px);
+      text-align: center;
+      padding: 60px 25px;
+    }
+
+    .eyebrow {
+      letter-spacing: 4px;
+      font-size: .72rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(5rem, 17vw, 10rem);
+      font-weight: 500;
+      line-height: .72;
+      color: var(--brown-dark);
+    }
+
+    .hero-names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.1rem, 7vw, 5.6rem);
+      line-height: 1.02;
+      font-weight: 600;
+      color: var(--brown-dark);
+      overflow-wrap: anywhere;
+      text-align: center;
+    }
+
+    .hero-names span {
+      display: block;
+      max-width: 100%;
+    }
+
+    .ampersand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--gold);
+      margin: 10px 0;
+      line-height: 1;
+    }
+
+    .hero-date {
+      margin: 35px 0 10px;
+      font-size: .9rem;
+      letter-spacing: 5px;
+      font-weight: 600;
+    }
+
+    .hero-tagline {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+      font-style: italic;
+      margin-bottom: 35px;
+    }
+
+    .proceed {
+      display: inline-flex;
+      gap: 15px;
+      align-items: center;
+      padding: 15px 25px;
+      border: 1px solid var(--brown);
+      border-radius: 50px;
+      transition: .3s ease;
+    }
+
+    .proceed:hover {
+      background: var(--brown);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .section {
+      padding: 95px 20px;
+      position: relative;
+    }
+
+    .section-inner {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading span {
+      font-size: .7rem;
+      letter-spacing: 4px;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin: 12px auto 0;
+      line-height: 1.8;
+      color: #735d54;
+    }
+
+    .story {
+      background: white;
+    }
+
+    .story-card {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      padding: 50px 30px;
+      border: 1px solid #eadbd0;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .story-card p {
+      line-height: 2;
+      color: #634f47;
+      font-size: 1rem;
+    }
+
+    .big-image-section {
+      width: 100%;
+      padding: 30px 20px 80px;
+      background: var(--cream);
+    }
+
+    .big-image-container {
+      width: min(1200px, 100%);
+      min-height: 650px;
+      margin: auto;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #eee5dc;
+      box-shadow: var(--shadow);
+    }
+
+    .big-ceremony-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 650px;
+      object-fit: cover;
+    }
+
+    .details {
+      background: #fbf4ed;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .detail-card {
+      background: white;
+      padding: 35px 25px;
+      text-align: center;
+      border-radius: 22px;
+      border: 1px solid #eadbd0;
+      transition: .3s ease;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .detail-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .detail-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .detail-card p {
+      line-height: 1.7;
+      color: #6e5a51;
+    }
+
+    .venue-link {
+      display: inline-block;
+      color: inherit;
+      transition: color .25s ease, transform .25s ease;
+    }
+
+    .venue-link span {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .3px;
+    }
+
+    .venue-link:hover {
+      color: var(--brown);
+      transform: translateY(-2px);
+    }
+
+    .venue-link:hover span {
+      text-decoration: underline;
+    }
+
+    .naming {
+      background:
+        radial-gradient(circle at 0 100%, rgba(120,80,165,.22), transparent 35%),
+        radial-gradient(circle at 100% 0, rgba(120,80,165,.2), transparent 35%),
+        linear-gradient(135deg, #fff, #f7f0fb);
+      padding-top: 110px;
+    }
+
+    .naming-intro {
+      text-align: center;
+      max-width: 760px;
+      margin: -20px auto 45px;
+    }
+
+    .naming-intro h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      color: var(--purple-dark);
+      font-weight: 600;
+    }
+
+    .naming-intro p {
+      margin-top: 10px;
+      color: #705f78;
+      line-height: 1.8;
+    }
+
+    .naming-card {
+      width: min(650px, 100%);
+      margin: auto;
+      background: white;
+      padding: 15px;
+      border-radius: 28px;
+      box-shadow: 0 25px 80px rgba(74, 44, 108, .2);
+      border: 1px solid rgba(118,80,165,.18);
+    }
+
+    .naming-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    .naming-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .naming-info div {
+      background: #faf5fd;
+      padding: 20px 12px;
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .naming-info strong {
+      display: block;
+      color: var(--purple-dark);
+      margin-bottom: 5px;
+    }
+
+    .naming-info small {
+      color: #765f80;
+      line-height: 1.5;
+    }
+
+    .rsvp {
+      background: var(--brown-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .rsvp .section-heading p {
+      color: #ddcfc8;
+    }
+
+    .rsvp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 360px);
+      min-height: 56px;
+      margin-top: 25px;
+      padding: 15px 22px;
+      border-radius: 50px;
+      background: var(--gold);
+      color: #3d281f;
+      font-weight: 700;
+      font-size: clamp(.9rem, 3.5vw, 1rem);
+      text-align: center;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      transition: .3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .rsvp-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(195,154,85,.25);
+    }
+
+    .rsvp-button {
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .call-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(30, 18, 14, .62);
+      backdrop-filter: blur(7px);
+    }
+
+    .call-modal.show {
+      display: flex;
+      animation: modalFade .25s ease;
+    }
+
+    .call-modal-box {
+      position: relative;
+      width: min(92vw, 390px);
+      padding: 34px 24px 26px;
+      border-radius: 24px;
+      background: #fffaf4;
+      color: var(--brown-dark);
+      text-align: center;
+      box-shadow: 0 25px 80px rgba(0,0,0,.3);
+      animation: modalUp .3s ease;
+    }
+
+    .call-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      border: 0;
+      background: transparent;
+      color: #6b4438;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .call-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      font-size: 1.6rem;
+    }
+
+    .call-modal-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    .call-modal-box p {
+      line-height: 1.6;
+      color: #6e5a51;
+    }
+
+    .call-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .call-now, .call-cancel {
+      flex: 1;
+      min-height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .call-now {
+      background: var(--gold);
+      color: #3d281f;
+    }
+
+    .call-cancel {
+      border: 1px solid #d8c8bd;
+      background: white;
+      color: var(--brown-dark);
+    }
+
+    @keyframes modalFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes modalUp {
+      from { transform: translateY(20px) scale(.97); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      background: #2d1c18;
+      color: #d9c9c0;
+      font-size: .75rem;
+      letter-spacing: 1px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 800px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .naming-info {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 75px 16px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-content {
+        padding: 50px 15px;
+      }
+
+      .big-image-section {
+        padding: 15px 10px 60px;
+      }
+
+      .big-image-container,
+      .big-ceremony-image {
+        min-height: 430px;
+        border-radius: 20px;
+      }
+
+      .hero-names {
+        font-size: clamp(1.85rem, 9vw, 3.1rem);
+        line-height: 1.05;
+        padding: 0 8px;
+      }
+
+      .hero-names .ampersand {
+        font-size: 2.2rem;
+        margin: 8px 0;
+      }
+
+      .music-button {
+        top: 15px;
+        right: 15px;
+      }
+
+      .naming-card {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MUSIC BUTTON -->
+  <button class="music-button" id="musicBtn" aria-label="Play or pause music">
+    <span id="musicIcon">♫</span>
+  </button>
+
+  <!-- MUSIC FILE: keep Kuami-Eugene-Open-Gate in the same folder as this HTML -->
+  <audio id="weddingMusic" src="Kuami-Eugene-Open-Gate.mp3" loop preload="auto"></audio>
+
+  <!-- =========================
+       CEREMONY HERO
+  ========================== -->
+  <header class="hero" id="home">
+    <div class="particles">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">NAMING CEREMONY INVITATION</p>
+
+      <div class="hero-names">
+        <span>Mr. Evans Elikem Afeletey</span>
+        <div class="ampersand">&amp;</div>
+        <span>Miss Esther Naa Adjeley Tetteh</span>
+      </div>
+
+      <p class="hero-date">04 · 09 · 2026</p>
+      <p class="hero-tagline">One precious life. One beautiful beginning.</p>
+
+      <a href="#ceremony-image" class="proceed">EXPLORE OUR DAY <span>↓</span></a>
+    </div>
+  </header>
+
+  <!-- =========================
+       SECOND LARGE CEREMONY IMAGE
+  ========================== -->
+  <section class="big-image-section reveal" id="ceremony-image">
+    <div class="big-image-container">
+      <img
+        src="ceremony.jpeg"
+        alt="Evans and Esther Naming Ceremony Invitation"
+        class="big-ceremony-image"
+      >
+    </div>
+  </section>
+
+  <!-- =========================
+       CEREMONY DETAILS
+  ========================== -->
+  <section class="section details reveal">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <span>THE CEREMONY</span>
+        <h2>Ceremony Details</h2>
+      </div>
+
+      <div class="details-grid">
+
+        <div class="detail-card">
+          <div class="detail-icon">♡</div>
+          <h3>Date</h3>
+          <p>Saturday<br>4th September 2026</p>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">⌚</div>
+          <h3>Order of the Day</h3>
+          <p>
+            6:00 AM — Guest Arrival<br>
+            6:30 AM —  Naming & Outdooring Ceremony ✨<br>
+            
+          </p>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">⌖</div>
+          <h3>Venue</h3>
+          <p><a 
+  href="https://maps.app.goo.gl/7two2UQyUuPgfrQMA"
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="venue-link"
+  aria-label="Open Trinity Methodist Church, La, Ghana in Google Maps"
+>
+  <strong>Trinity Methodist Church, La</strong><br>
+  Near Kingdom Hall of Jehovah's Witnesses,<br>
+  La, Accra, Ghana<br>
+
+  <span>📍 Open in Google Maps</span>
+</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       NAMING CEREMONY
+  ========================== -->
+  <section class="section naming reveal" id="naming">
+
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <span>THE NEXT BEAUTIFUL CHAPTER</span>
+        <h2>Naming Ceremony</h2>
+      </div>
+
+      <div class="naming-intro">
+        <h3>Humbly Invite You to the Naming Ceremony</h3>
+        <p>
+          we are delighted to invite
+          you to celebrate the naming ceremony of our newborn baby.
+        </p>
+      </div>
+
+      <div class="naming-info">
+
+        <div>
+          <strong>DATE</strong>
+          <small>Friday<br>4th September 2026</small>
+        </div>
+
+        <div>
+          <strong>TIME</strong>
+          <small>6:30 AM Prompt</small>
+        </div>
+
+        <div>
+          <strong>VENUE</strong>
+          <small>
+            Trinity Methodist Church,<br>
+            Near Kingdom Hall of Jehovah's Witness
+          </small>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       RSVP
+  ========================== -->
+  <section class="section rsvp reveal" id="rsvp">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <span>WE WOULD LOVE TO SEE YOU</span>
+        <h2>RSVP</h2>
+        <p>
+          Your presence at these special moments means so much to us.
+          For the naming ceremony, kindly confirm your attendance using
+          the contact below.
+        </p>
+      </div>
+
+      <button class="rsvp-button" id="callRsvpBtn" type="button" aria-label="Call RSVP number 0542277960">
+        ☎ Call / RSVP: 054 227 7960
+      </button>
+
+    </div>
+  </section>
+
+  <!-- CALL POP-UP -->
+  <div class="call-modal" id="callModal" aria-hidden="true">
+    <div class="call-modal-box" role="dialog" aria-modal="true" aria-labelledby="callTitle">
+      <button class="call-close" id="closeCallModal" type="button" aria-label="Close">&times;</button>
+      <div class="call-icon">☎</div>
+      <h3 id="callTitle">Call for RSVP</h3>
+      <p>Would you like to call <strong>054 227 7960</strong>?</p>
+      <div class="call-actions">
+        <a class="call-now" href="tel:+233542277960">Call Now</a>
+        <button class="call-cancel" id="cancelCall" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Mr. Evans Elikem Afeletey &amp; Miss Esther Naa Adjeley Tetteh · With love, family &amp; friends
+  </footer>
+
+  <script>
+    const musicBtn = document.getElementById("musicBtn");
+    const musicIcon = document.getElementById("musicIcon");
+    const weddingMusic = document.getElementById("weddingMusic");
+
+    let musicPlaying = false;
+
+    // Start music as soon as the page loads.
+    async function startMusic() {
+      try {
+        await weddingMusic.play();
+        musicPlaying = true;
+        musicIcon.textContent = "❚❚";
+      } catch (error) {
+        // Some browsers block autoplay with sound.
+        // In that case, start it on the first tap/click.
+        musicPlaying = false;
+        musicIcon.textContent = "♫";
+      }
+    }
+
+    window.addEventListener("load", startMusic);
+
+    // Fallback for browsers that block autoplay.
+    document.addEventListener("click", async function startAfterClick() {
+      if (!musicPlaying) {
+        try {
+          await weddingMusic.play();
+          musicPlaying = true;
+          musicIcon.textContent = "❚❚";
+        } catch (error) {}
+      }
+      document.removeEventListener("click", startAfterClick);
+    }, { once: true });
+
+    musicBtn.addEventListener("click", async (event) => {
+      event.stopPropagation();
+
+      if (musicPlaying) {
+        weddingMusic.pause();
+        musicIcon.textContent = "♫";
+        musicPlaying = false;
+      } else {
+        try {
+          await weddingMusic.play();
+          musicIcon.textContent = "❚❚";
+          musicPlaying = true;
+        } catch (error) {
+          musicIcon.textContent = "♫";
+        }
+      }
+    });
+
+    // RSVP call pop-up. The Call Now button opens the phone dialer on supported devices.
+    const callRsvpBtn = document.getElementById("callRsvpBtn");
+    const callModal = document.getElementById("callModal");
+    const closeCallModal = document.getElementById("closeCallModal");
+    const cancelCall = document.getElementById("cancelCall");
+
+    function openCallModal() {
+      callModal.classList.add("show");
+      callModal.setAttribute("aria-hidden", "false");
+      closeCallModal.focus();
+    }
+
+    function closeCall() {
+      callModal.classList.remove("show");
+      callModal.setAttribute("aria-hidden", "true");
+    }
+
+    callRsvpBtn.addEventListener("click", openCallModal);
+    closeCallModal.addEventListener("click", closeCall);
+    cancelCall.addEventListener("click", closeCall);
+
+    callModal.addEventListener("click", (event) => {
+      if (event.target === callModal) closeCall();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeCall();
+    });
+
+    // Reveal sections as the visitor scrolls.
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach((element) => observer.observe(element));
+  </script>
+
+</body>
+</html>
